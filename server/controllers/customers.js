@@ -25,6 +25,16 @@ function customerController(){
 			}
 		})
 	}
+	this.deleteCustomer = function(req, res){
+		Customer.findOne({_id:req.params.id}, function(err, customer){
+			console.log(customer)
+			if (err) {
+				console.log('that customer does not exist', err)
+			} else {
+				customer.remove();
+			}
+		})
+	}
 }
 
 module.exports = new customerController();

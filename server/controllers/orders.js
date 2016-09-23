@@ -1,20 +1,20 @@
 var mongoose = require('mongoose');
-var mongooseDb = mongoose.model('Mongoosedb');
+var Order = mongoose.model('Order');
 
-function MongooseController(){
-	this.getMongoose = function(req, res){
-	// 	mongooseDb.find({}, function(err, mongooses){
-	// 		if(err){
-	// 			console.log(err);
-	// 			console.log('getmongooses function mongooses controller');
-	// 		} else {
-	// 			res.json(mongooses);
-	// 		}
-	// 	})		
+function OrderController(){
+	this.getOrders = function(req, res){
+		Order.find({}, function(err, orders){
+			if(err){
+				console.log(err);
+				console.log('getorders did not work', err);
+			} else {
+				res.json(orders);
+			}
+		})		
 	}
-	this.createMongoose = function(req, res){
-		console.log("creating mongoose");
+	this.createOrder = function(req, res){
+		
 	}
 }
 
-module.exports = new MongooseController();
+module.exports = new OrderController();

@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 var CustomerSchema = new mongoose.Schema({
     name: String,
-    _order: [{type: Schema.Types.ObjectId, ref:'Order'}]
 }, {timestamps: true});
 
 mongoose.model('Customer', CustomerSchema);
